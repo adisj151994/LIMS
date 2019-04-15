@@ -11,5 +11,11 @@ namespace LIMS_IBusinessLogicLayer.IRepositories
     {
         IEnumerable<Book> GetBooksWithAuthor(int pageIndex, int pageSize);
         IEnumerable<Book> GetBooksWithPublisher(int pageIndex, int pageSize);
+        int RemoveFromCatelog(Book book);
+        int AddToCatelog(Book book);
+        Book DisplayBookDetails(int bookId);
+        int AddNewBooks(IEnumerable<Book> books);
+        int DeleteBooks(IEnumerable<Book> books);
+        IEnumerable<Book> SearchBooks(string bookName, string author);
     }
 }
