@@ -15,10 +15,20 @@ namespace LIMS_Test
             using (var unitOfWork = new UnitOfWork(new LIMSDBContext()))
             {
                 // Example1
-                var course = unitOfWork.Books.GetAll(); //SearchBooks("Book Name1", "AuthorName").ToList();
+                //var course = unitOfWork.Books.GetAll(); //
+
+                //var Books = unitOfWork.Books.SearchBooks("Book Name1", "AuthorName").ToList();
+
+                var books = new List<Book>();
+
+                Book book = new MagazineBook();
+
+
+
+                var Books = unitOfWork.Books.AddNewBooks(books);
 
                 // Example2
-                var courses = unitOfWork.Books.Get(3);
+                //var courses = unitOfWork.Books.Get(3);
 
                 // Example3
                 //var author = unitOfWork.Authors.GetAuthorWithCourses(1);

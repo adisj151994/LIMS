@@ -41,21 +41,23 @@ namespace LIMS_DataLayer.Repositories
             throw new NotImplementedException();
         }
 
-        public int AddNewBooks(IEnumerable<Book> books)
+        public IEnumerable<Book> AddNewBooks(IEnumerable<Book> books)
         {
-            throw new NotImplementedException();
+            return LIMSDBContext.Books
+                .AddRange(books);
         }
 
-        public int DeleteBooks(IEnumerable<Book> books)
+        public IEnumerable<Book> DeleteBooks(IEnumerable<Book> books)
         {
-            throw new NotImplementedException();
+            return LIMSDBContext.Books
+                .RemoveRange(books);
         }
 
         public IEnumerable<Book> SearchBooks(string bookName, string author)
         {
             return LIMSDBContext.Books
-                 .Include(b => b.Author);
-                 //.Where(b => b.Author.AuthorName == author && b.Name == bookName);
+                 .Include(b => b.Author)
+                 .Where(b => b.Author.AuthorName == author && b.Name == bookName);
         }
         public LIMSDBContext LIMSDBContext { get { return Context as LIMSDBContext; } }
     }

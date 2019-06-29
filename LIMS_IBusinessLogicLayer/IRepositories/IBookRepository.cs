@@ -14,8 +14,8 @@ namespace LIMS_IBusinessLogicLayer.IRepositories
         int RemoveFromCatelog(Book book);
         int AddToCatelog(Book book);
         Book DisplayBookDetails(int bookId);
-        int AddNewBooks(IEnumerable<Book> books);
-        int DeleteBooks(IEnumerable<Book> books);
+        IEnumerable<Book> AddNewBooks(IEnumerable<Book> books);
+        IEnumerable<Book> DeleteBooks(IEnumerable<Book> books);
         IEnumerable<Book> SearchBooks(string bookName, string author);
     }
 }
