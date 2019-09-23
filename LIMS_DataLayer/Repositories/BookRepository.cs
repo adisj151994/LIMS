@@ -16,16 +16,6 @@ namespace LIMS_DataLayer.Repositories
         {
         }
 
-        public IEnumerable<Book> GetBooksWithAuthor(int pageIndex, int pageSize)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Book> GetBooksWithPublisher(int pageIndex, int pageSize)
-        {
-            throw new NotImplementedException();
-        }
-
         public int RemoveFromCatelog(Book book)
         {
             throw new NotImplementedException();
@@ -38,26 +28,31 @@ namespace LIMS_DataLayer.Repositories
 
         public Book DisplayBookDetails(int bookId)
         {
-            throw new NotImplementedException();
+            return LIMSDBContext.Books
+                .Where(b => b.BookId == bookId)
+                .SingleOrDefault();
         }
 
-        public IEnumerable<Book> AddNewBooks(IEnumerable<Book> books)
+        public List<Book> AddNewBooks(List<Book> books)
         {
             return LIMSDBContext.Books
-                .AddRange(books);
+                .AddRange(books)
+                .ToList();
         }
 
-        public IEnumerable<Book> DeleteBooks(IEnumerable<Book> books)
+        public List<Book> DeleteBooks(List<Book> books)
         {
             return LIMSDBContext.Books
-                .RemoveRange(books);
+                .RemoveRange(books)
+                .ToList();
         }
 
-        public IEnumerable<Book> SearchBooks(string bookName, string author)
+        public List<Book> SearchBooks(string bookName, string author)
         {
             return LIMSDBContext.Books
                  .Include(b => b.Author)
-                 .Where(b => b.Author.AuthorName == author && b.Name == bookName);
+                 .Include(b => b.Publisher)
+                 .Where(b => b.Author.AuthorName == author && b.Name == bookName).ToList();
         }
         public LIMSDBContext LIMSDBContext { get { return Context as LIMSDBContext; } }
     }

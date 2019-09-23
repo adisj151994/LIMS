@@ -9,6 +9,6 @@ namespace LIMS_IBusinessLogicLayer.IRepositories
 {
     public interface IBillRepository : IRepository<Bill>
     {
-        IEnumerable<Bill> GetBooksWithBook(int pageIndex, int pageSize);
+        int CreateBill(Bill bill);
     }
 }

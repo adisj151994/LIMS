@@ -41,7 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BooksBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LIMS_DataLayer\LIMS_DataLayer.csproj">
+      <Project>{E31DE574-A079-4D66-993B-5E84591A2997}</Project>
+      <Name>LIMS_DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LIMS_IBusinessLogicLayer\LIMS_IBusinessLogicLayer.csproj">
+      <Project>{647EF4E2-B713-4351-9B69-63C44D13A2B3}</Project>
+      <Name>LIMS_IBusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LIMS_Model\LIMS_Model.csproj">
+      <Project>{839D4D68-C8AD-4964-BC3F-522239DEB914}</Project>
+      <Name>LIMS_Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,6 +15,7 @@ namespace LIMS_DataLayer
             : base("name=LIMSDbContext")
         {
             this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Author> Authors { get; set; }

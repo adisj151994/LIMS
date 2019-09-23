@@ -16,7 +16,12 @@ namespace LIMS_DataLayer.Repositories
             : base(context)
         {
         }
-        public IEnumerable<Bill> GetBooksWithBook(int pageIndex, int pageSize)
+        public List<Bill> GetBooksWithBook(int pageIndex, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int CreateBill(Bill bill)
         {
             throw new NotImplementedException();
         }

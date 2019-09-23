@@ -25,7 +25,7 @@ namespace LIMS_DataLayer
             return Context.Set<TEntity>().Find(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public List<TEntity> GetAll()
         {
             // Note that here I've repeated Context.Set<TEntity>() in every method and this is causing
             // too much noise. I could get a reference to the DbSet returned from this method in the 
@@ -41,9 +41,11 @@ namespace LIMS_DataLayer
             return Context.Set<TEntity>().ToList();
         }
 
-        public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        public List<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {
-            return Context.Set<TEntity>().Where(predicate);
+            return Context.Set<TEntity>()
+                .Where(predicate)
+                .ToList();
         }
 
         public TEntity SingleOrDefault(Expression<Func<TEntity, bool>> predicate)
@@ -56,7 +58,7 @@ namespace LIMS_DataLayer
             Context.Set<TEntity>().Add(entity);
         }
 
-        public void AddRange(IEnumerable<TEntity> entities)
+        public void AddRange(List<TEntity> entities)
         {
             Context.Set<TEntity>().AddRange(entities);
         }
@@ -66,7 +68,7 @@ namespace LIMS_DataLayer
             Context.Set<TEntity>().Remove(entity);
         }
 
-        public void RemoveRange(IEnumerable<TEntity> entities)
+        public void RemoveRange(List<TEntity> entities)
         {
             Context.Set<TEntity>().RemoveRange(entities);
         }

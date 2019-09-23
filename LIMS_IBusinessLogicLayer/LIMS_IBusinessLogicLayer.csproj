@@ -41,8 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRepositories\IAuthorRepository.cs" />
     <Compile Include="IRepositories\IBillRepository.cs" />
     <Compile Include="IRepositories\IBookRepository.cs" />
+    <Compile Include="IRepositories\IFacultyMemberRepository.cs" />
+    <Compile Include="IRepositories\IDatabaseRepository.cs" />
+    <Compile Include="IRepositories\IStudentMemberRepository.cs" />
+    <Compile Include="IRepositories\ISupplierRepository.cs" />
+    <Compile Include="IRepositories\ISupplierTransactionRepository.cs" />
+    <Compile Include="IRepositories\ITransactionRepository.cs" />
+    <Compile Include="IRepositories\IPublisherRepository.cs" />
+    <Compile Include="IRepositories\IMemberBookRepository.cs" />
+    <Compile Include="IRepositories\IMagazineBookRepository.cs" />
+    <Compile Include="IRepositories\ILibrarianRepository.cs" />
+    <Compile Include="IRepositories\IJournalBookRepository.cs" />
+    <Compile Include="IRepositories\IFineRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IRepository.cs" />

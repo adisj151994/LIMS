@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LIMS_BusinessLogicLayer\LIMS_BusinessLogicLayer.csproj">
+      <Project>{14279c7d-31db-4b57-be55-6b00a9a894a3}</Project>
+      <Name>LIMS_BusinessLogicLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LIMS_DataLayer\LIMS_DataLayer.csproj">
       <Project>{e31de574-a079-4d66-993b-5e84591a2997}</Project>
       <Name>LIMS_DataLayer</Name>
